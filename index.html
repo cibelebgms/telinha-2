@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercado Aberto — Indicações de cursos de finanças</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..900&family=Inter:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="logo">
+      <span class="logo-icone"><i class="bi bi-bank"></i></span>
+      <strong>Mercado Aberto</strong>
+    </div>
+    <span class="topo-texto">35 indicações gratuitas · sempre atualizadas</span>
+  </header>
+
+  <section class="hero">
+    <span class="selo"><i class="bi bi-graph-up-arrow"></i> Curadoria de indicações</span>
+    <h1>Os melhores cursos de finanças,<br><span>indicados de verdade</span></h1>
+    <p>
+      Selecionamos cursos e materiais gratuitos de finanças pessoais, investimentos,
+      economia, gestão de empresas e empreendedorismo em plataformas confiáveis.
+      Escolha um tema, clique no card e vá direto para o curso.
+    </p>
+
+    <div class="filtros">
+      <button class="filtro ativo" onclick="escolherCategoria('Tudo', this)">Tudo <small>35</small></button>
+      <button class="filtro" onclick="escolherCategoria('Economia', this)">Economia <small>9</small></button>
+      <button class="filtro" onclick="escolherCategoria('Finanças Pessoais', this)">Finanças Pessoais <small>3</small></button>
+      <button class="filtro" onclick="escolherCategoria('Finanças Empresariais', this)">Finanças Empresariais <small>7</small></button>
+      <button class="filtro" onclick="escolherCategoria('Investimentos', this)">Investimentos <small>5</small></button>
+      <button class="filtro" onclick="escolherCategoria('Orçamento e Planejamento', this)">Orçamento e Planejamento <small>3</small></button>
+      <button class="filtro" onclick="escolherCategoria('Dívidas e Crédito', this)">Dívidas e Crédito <small>4</small></button>
+      <button class="filtro" onclick="escolherCategoria('Empreendedorismo', this)">Empreendedorismo <small>4</small></button>
+    </div>
+  </section>
+
+  <section class="ferramentas">
+    <input type="text" id="busca" placeholder="Buscar curso por nome ou assunto..." onkeyup="aplicarFiltros()">
+    <span id="contador"></span>
+  </section>
+
+  <p id="aviso" class="aviso">Nenhum curso encontrado. Tente outra busca ou outro tema.</p>
+
+  <main class="grade">
+    <!-- Economia -->
+    <a class="card economia" href="https://pt.khanacademy.org/economics-finance-domain/macroeconomics/macro-basic-economics-concepts" target="_blank" data-categoria="Economia">
+      <div class="capa"><i class="bi bi-globe-americas"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>O que é inflação e por que ela corrói seu dinheiro</h3>
+      <p class="resumo">IPCA, IGP-M e inflação de núcleo: entenda os índices, como a inflação é medida e o que ela faz com o poder de compra do seu salário e da sua poupança.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-globe-americas"></i> Economia</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card economia" href="https://pt.khanacademy.org/economics-finance-domain/macroeconomics/monetary-system-topic" target="_blank" data-categoria="Economia">
+      <div class="capa"><i class="bi bi-globe-americas"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>Taxa Selic: como ela funciona e onde você sente</h3>
+      <p class="resumo">Da decisão do Copom ao preço do arroz: como a taxa básica de juros brasileira se propaga pelo crédito, pelo dólar, pelos investimentos e pelo seu bolso.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-globe-americas"></i> Economia</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card economia" href="https://pt.khanacademy.org/economics-finance-domain/macroeconomics" target="_blank" data-categoria="Economia">
+      <div class="capa"><i class="bi bi-globe-americas"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>PIB, recessão e ciclos econômicos</h3>
+      <p class="resumo">O que o Produto Interno Bruto realmente mede, por que duas quedas seguidas definem recessão e como identificar em que fase do ciclo a economia está.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-globe-americas"></i> Economia</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card economia" href="https://pt.khanacademy.org/economics-finance-domain/core-finance/money-and-banking/currency-tutorial/v/currency-exchange-introduction" target="_blank" data-categoria="Economia">
+      <div class="capa"><i class="bi bi-globe-americas"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>Câmbio: por que o dólar sobe e desce</h3>
+      <p class="resumo">Paridade, risco-país, balança comercial e especulação: os motores que movem o real frente ao dólar e o que isso significa para importadores e viajantes.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-globe-americas"></i> Economia</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card economia" href="https://pt.khanacademy.org/economics-finance-domain/microeconomics" target="_blank" data-categoria="Economia">
+      <div class="capa"><i class="bi bi-globe-americas"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>Oferta e demanda: a lei que move todos os preços</h3>
+      <p class="resumo">Da feira à bolsa de valores: como curvas de oferta e demanda explicam escassez, excedente, elasticidade e aquele preço do abacate que nunca para de mudar.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-globe-americas"></i> Economia</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card economia" href="https://pt.khanacademy.org/economics-finance-domain/macroeconomics/monetary-system-topic/macro-monetary-policy/v/monetary-and-fiscal-policy" target="_blank" data-categoria="Economia">
+      <div class="capa"><i class="bi bi-globe-americas"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>Política monetária x política fiscal: quem mexe em quê</h3>
+      <p class="resumo">Banco Central versus governo: quem controla juros, quem controla gastos, e como as duas políticas se disputam o mesmo objetivo de estabilizar a economia.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-globe-americas"></i> Economia</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Avançado</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card economia" href="https://pt.khanacademy.org/economics-finance-domain/macroeconomics" target="_blank" data-categoria="Economia">
+      <div class="capa"><i class="bi bi-globe-americas"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>Desemprego, salários e mercado de trabalho</h3>
+      <p class="resumo">Como a taxa de desemprego é calculada, o que é subutilização da mão de obra e por que o salário médio pode subir mesmo com economia fraca.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-globe-americas"></i> Economia</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card economia" href="https://pt.khanacademy.org/economics-finance-domain/macroeconomics" target="_blank" data-categoria="Economia">
+      <div class="capa"><i class="bi bi-globe-americas"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>Globalização e comércio internacional</h3>
+      <p class="resumo">Vantagens comparativas, tarifas, guerra comercial e cadeias globais de produção: por que um celular é feito em dez países e o que isso tem a ver com você.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-globe-americas"></i> Economia</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card economia" href="https://www.binance.com/pt-BR/academy" target="_blank" data-categoria="Economia">
+      <div class="capa"><i class="bi bi-globe-americas"></i></div>
+      <p class="plataforma">Binance Academy</p>
+      <h3>Criptomoedas e o futuro do dinheiro</h3>
+      <p class="resumo">Do Bitcoin ao real digital: como funcionam moedas descentralizadas, o que são stablecoins e quais os riscos reais de quem decide se expor ao mercado.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-globe-americas"></i> Economia</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <!-- Finanças Pessoais -->
+    <a class="card pessoais" href="https://www.ev.org.br/cursos/educacao-financeira" target="_blank" data-categoria="Finanças Pessoais">
+      <div class="capa"><i class="bi bi-wallet2"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Reserva de emergência: quanto guardar e onde deixar</h3>
+      <p class="resumo">Regra dos 6 meses, liquidez diária e a diferença entre render e crescer: o guia direto para montar o colchão financeiro sem cair em armadilhas.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-wallet2"></i> Finanças Pessoais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card pessoais" href="https://www.ev.org.br/cursos/Construindo-minha-Protecao-Financeira" target="_blank" data-categoria="Finanças Pessoais">
+      <div class="capa"><i class="bi bi-wallet2"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Seguros e proteção patrimonial</h3>
+      <p class="resumo">Vida, saúde, residencial e responsabilidade civil: quando um seguro é despesa necessária, como dimensionar coberturas e os equívocos mais caros do mercado.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-wallet2"></i> Finanças Pessoais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card pessoais" href="https://www.ev.org.br/cursos/educacao-financeira" target="_blank" data-categoria="Finanças Pessoais">
+      <div class="capa"><i class="bi bi-wallet2"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Primeiro salário: por onde começar</h3>
+      <p class="resumo">Chegou o dinheiro, e agora? Ordem certa de contas, quanto separar para o futuro e os hábitos que separam quem prospera de quem vive no limite.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-wallet2"></i> Finanças Pessoais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <!-- Finanças Empresariais -->
+    <a class="card empresariais" href="https://sebrae.com.br/sites/PortalSebrae/cursosonline/fluxo-de-caixa-como-ferramenta-de-gestao-para-o-seu-negocio,93b3464a23538810VgnVCM1000001b00320aRCRD" target="_blank" data-categoria="Finanças Empresariais">
+      <div class="capa"><i class="bi bi-building"></i></div>
+      <p class="plataforma">Sebrae</p>
+      <h3>Fluxo de caixa: o pulso de qualquer empresa</h3>
+      <p class="resumo">Lucro não paga boleto. Aprenda a montar e ler um fluxo de caixa, separar entradas e saídas e antecipar meses de aperto antes que virem crise.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-building"></i> Finanças Empresariais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card empresariais" href="https://www.ev.org.br/cursos/Analise-de-Balan%C3%A7os" target="_blank" data-categoria="Finanças Empresariais">
+      <div class="capa"><i class="bi bi-building"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Balanço patrimonial: lendo a saúde de uma empresa</h3>
+      <p class="resumo">Ativo, passivo e patrimônio líquido explicados sem jargão: como usar o balanço para avaliar endividamento, liquidez e solidez antes de investir ou fechar contrato.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-building"></i> Finanças Empresariais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card empresariais" href="https://loja.sebrae.com.br/gest-o-financeira-1-372000026927" target="_blank" data-categoria="Finanças Empresariais">
+      <div class="capa"><i class="bi bi-building"></i></div>
+      <p class="plataforma">Sebrae</p>
+      <h3>Precificação: custo, margem e valor percebido</h3>
+      <p class="resumo">As três abordagens de precificação, o erro clássico de copiar o concorrente e como encontrar o preço que sustenta o negócio sem espantar o cliente.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-building"></i> Finanças Empresariais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card empresariais" href="https://loja.sebrae.com.br/fluxo-de-caixa-para-pessoa-juridica-1-372000018056" target="_blank" data-categoria="Finanças Empresariais">
+      <div class="capa"><i class="bi bi-building"></i></div>
+      <p class="plataforma">Sebrae</p>
+      <h3>Capital de giro: sobreviver ao prazo entre vender e receber</h3>
+      <p class="resumo">Prazo de recebimento, estoque e fornecedores: como calcular a necessidade de capital de giro e quebrar o círculo vicioso de rolar dívida cara todo mês.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-building"></i> Finanças Empresariais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Avançado</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card empresariais" href="https://www.ev.org.br/cursos/Analise-de-Balan%C3%A7os" target="_blank" data-categoria="Finanças Empresariais">
+      <div class="capa"><i class="bi bi-building"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Valuation para leigos: quanto vale uma empresa?</h3>
+      <p class="resumo">Fluxo de caixa descontado, múltiplos de mercado e comparáveis: as principais formas de estimar o valor de um negócio e os erros que distorcem o número.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-building"></i> Finanças Empresariais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Avançado</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card empresariais" href="https://www.ev.org.br/cursos/contabilidade-empresarial" target="_blank" data-categoria="Finanças Empresariais">
+      <div class="capa"><i class="bi bi-building"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Impostos sobre venda: DRE, lucro real e presumido</h3>
+      <p class="resumo">Guia prático dos regimes tributários brasileiros, quando cada um compensa e como a escolha errada pode custar pontos percentuais de margem todos os anos.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-building"></i> Finanças Empresariais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card empresariais" href="https://www.ev.org.br/cursos/estrategia-de-negocios" target="_blank" data-categoria="Finanças Empresariais">
+      <div class="capa"><i class="bi bi-building"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>M&amp;A: como funcionam fusões e aquisições</h3>
+      <p class="resumo">Due diligence, sinergias e prêmio de controle: o bastidor das grandes compras de empresas e os motivos pelos quais metade delas fracassa.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-building"></i> Finanças Empresariais</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Avançado</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <!-- Investimentos -->
+    <a class="card investimentos" href="https://pt.khanacademy.org/economics-finance-domain/core-finance" target="_blank" data-categoria="Investimentos">
+      <div class="capa"><i class="bi bi-graph-up"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>Juros compostos: a oitava maravilha do mundo</h3>
+      <p class="resumo">Como os juros sobre juros transformam pequenos aportes mensais em patrimônio relevante ao longo de décadas — e por que começar cedo pesa mais do que aportar muito.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-graph-up"></i> Investimentos</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card investimentos" href="https://www.tesourodireto.com.br/videos/curso-tesouro-direto-introducao.htm" target="_blank" data-categoria="Investimentos">
+      <div class="capa"><i class="bi bi-graph-up"></i></div>
+      <p class="plataforma">Tesouro Direto</p>
+      <h3>Renda fixa sem mistério: Tesouro, CDB e LCI</h3>
+      <p class="resumo">Prefixado, pós-fixado e híbrido explicados com exemplos numéricos: qual escolher em cada cenário de juros e como comparar rentabilidades de verdade.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-graph-up"></i> Investimentos</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card investimentos" href="https://edu.b3.com.br/w/acoes" target="_blank" data-categoria="Investimentos">
+      <div class="capa"><i class="bi bi-graph-up"></i></div>
+      <p class="plataforma">B3 Educação</p>
+      <h3>Primeiros passos na bolsa de valores</h3>
+      <p class="resumo">O que é a B3, como abrir conta, ordens de compra e venda e os erros clássicos do iniciante: tudo o que você precisa antes do primeiro investimento em ações.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-graph-up"></i> Investimentos</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card investimentos" href="https://edu.b3.com.br/w/minha-primeira-acao" target="_blank" data-categoria="Investimentos">
+      <div class="capa"><i class="bi bi-graph-up"></i></div>
+      <p class="plataforma">B3 Educação</p>
+      <h3>Investir em ações: lendo um resultado trimestral</h3>
+      <p class="resumo">Receita, EBITDA, dívida líquida e distribuição de dividendos: um roteiro em cinco passos para interpretar o balanço de uma companhia aberta sem se perder.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-graph-up"></i> Investimentos</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Avançado</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card investimentos" href="https://borainvestir.b3.com.br/" target="_blank" data-categoria="Investimentos">
+      <div class="capa"><i class="bi bi-graph-up"></i></div>
+      <p class="plataforma">Bora Investir · B3</p>
+      <h3>Previdência e aposentadoria: começando pelos 25</h3>
+      <p class="resumo">Quanto guardar por mês para manter o padrão de vida na aposentadoria, com simulações realistas e o papel do PGBL, VGBL e do INSS no plano.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-graph-up"></i> Investimentos</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <!-- Orçamento e Planejamento -->
+    <a class="card orcamento" href="https://www.ev.org.br/cursos/organizacao-pessoal" target="_blank" data-categoria="Orçamento e Planejamento">
+      <div class="capa"><i class="bi bi-piggy-bank"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Orçamento doméstico: o método 50/30/20 na prática</h3>
+      <p class="resumo">Um passo a passo para dividir salário entre essenciais, desejos e futuro, com planilha comentada e dicas para caber na vida real, não no papel.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-piggy-bank"></i> Orçamento e Planejamento</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card orcamento" href="https://www.ev.org.br/cursos/excel-na-pratica" target="_blank" data-categoria="Orçamento e Planejamento">
+      <div class="capa"><i class="bi bi-piggy-bank"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Controle de gastos com planilha: comece hoje</h3>
+      <p class="resumo">Montar uma planilha de gastos não precisa ser bicho de sete cabeças: colunas essenciais, categorias que fazem sentido e o hábito de revisar toda semana.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-piggy-bank"></i> Orçamento e Planejamento</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card orcamento" href="https://www.ev.org.br/cursos/educacao-financeira" target="_blank" data-categoria="Orçamento e Planejamento">
+      <div class="capa"><i class="bi bi-piggy-bank"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Metas financeiras: saindo do 'quero guardar' ao plano</h3>
+      <p class="resumo">Como transformar um sonho vago em meta com valor, prazo e aporte mensal — e como revisar o plano quando a vida muda no meio do caminho.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-piggy-bank"></i> Orçamento e Planejamento</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <!-- Dívidas e Crédito -->
+    <a class="card dividas" href="https://ba.loja.sebrae.com.br/financas-em-dia-combo-001" target="_blank" data-categoria="Dívidas e Crédito">
+      <div class="capa"><i class="bi bi-credit-card"></i></div>
+      <p class="plataforma">Sebrae</p>
+      <h3>Sair das dívidas: métodos bola de neve e avalanche</h3>
+      <p class="resumo">Duas estratégias comprovadas de quitação, como renegociar com credores e o plano de 90 dias para zerar cartão, cheque especial e crédito pessoal.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-credit-card"></i> Dívidas e Crédito</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card dividas" href="https://pt.khanacademy.org/economics-finance-domain/core-finance" target="_blank" data-categoria="Dívidas e Crédito">
+      <div class="capa"><i class="bi bi-credit-card"></i></div>
+      <p class="plataforma">Khan Academy</p>
+      <h3>Empréstimos e crédito: como funcionam de verdade</h3>
+      <p class="resumo">CET, juros compostos do rotativo e o custo real de parcelar: entenda quando o crédito é ferramenta e quando é armadilha, antes de assinar qualquer contrato.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-credit-card"></i> Dívidas e Crédito</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card dividas" href="https://www.ev.org.br/cursos/educacao-financeira" target="_blank" data-categoria="Dívidas e Crédito">
+      <div class="capa"><i class="bi bi-credit-card"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Cartão de crédito na prática: parcelar ou não?</h3>
+      <p class="resumo">Fatura, rotativo, parcelamento sem juros que tem juros: os mecanismos do cartão explicados e as regras simples para usá-lo a seu favor.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-credit-card"></i> Dívidas e Crédito</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card dividas" href="https://ba.loja.sebrae.com.br/financas-em-dia-combo-001" target="_blank" data-categoria="Dívidas e Crédito">
+      <div class="capa"><i class="bi bi-credit-card"></i></div>
+      <p class="plataforma">Sebrae</p>
+      <h3>Renegociação de dívidas: como negociar de igual pra igual</h3>
+      <p class="resumo">Quando renegociar, com quem falar, que desconto pedir e o que anotar por escrito: o passo a passo para limpar o nome sem cair na mesma armadilha duas vezes.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-credit-card"></i> Dívidas e Crédito</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <!-- Empreendedorismo -->
+    <a class="card empreend" href="https://www.ev.org.br/cursos/empreendedorismo-e-inovacao" target="_blank" data-categoria="Empreendedorismo">
+      <div class="capa"><i class="bi bi-rocket-takeoff"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Empreendedorismo e inovação: do zero ao primeiro cliente</h3>
+      <p class="resumo">Como identificar oportunidades, validar a ideia com pouco dinheiro e dar os primeiros passos sem apostar tudo o que não tem.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-rocket-takeoff"></i> Empreendedorismo</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card empreend" href="https://www.ev.org.br/cursos/introducao-a-administracao" target="_blank" data-categoria="Empreendedorismo">
+      <div class="capa"><i class="bi bi-rocket-takeoff"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Administrando seu primeiro negócio</h3>
+      <p class="resumo">Planejamento, organização e controle: os fundamentos de administração que todo dono de negócio precisa dominar — sem curso de faculdade.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-rocket-takeoff"></i> Empreendedorismo</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card empreend" href="https://www.ev.org.br/cursos/introducao-a-gestao-de-projetos" target="_blank" data-categoria="Empreendedorismo">
+      <div class="capa"><i class="bi bi-rocket-takeoff"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Gestão de projetos na prática</h3>
+      <p class="resumo">Escopo, prazo e orçamento sob controle: como planejar e acompanhar qualquer projeto do negócio com ferramentas simples e eficientes.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-rocket-takeoff"></i> Empreendedorismo</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Intermediário</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+    <a class="card empreend" href="https://www.ev.org.br/cursos/pmes" target="_blank" data-categoria="Empreendedorismo">
+      <div class="capa"><i class="bi bi-rocket-takeoff"></i></div>
+      <p class="plataforma">Fundação Bradesco</p>
+      <h3>Inteligência artificial para pequenos negócios</h3>
+      <p class="resumo">Onde a IA já economiza horas de trabalho no dia a dia da pequena empresa — atendimento, marketing, planilhas — e como começar sem virar especialista.</p>
+      <div class="etiquetas"><span class="etiqueta categoria"><i class="bi bi-rocket-takeoff"></i> Empreendedorismo</span> <span class="etiqueta"><i class="bi bi-check-circle"></i> Gratuito</span> <span class="etiqueta">Básico</span></div>
+      <span class="link">Acessar curso <i class="bi bi-box-arrow-up-right"></i></span>
+    </a>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

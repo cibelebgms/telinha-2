@@ -1,0 +1,159 @@
+:root {
+  --fundo: oklch(0.972 0.018 305);
+  --texto: oklch(0.2 0.05 295);
+  --texto-claro: oklch(0.5 0.04 300);
+  --roxo: oklch(0.5 0.21 295);
+  --borda: oklch(0.9 0.03 305);
+  --c1: oklch(0.52 0.2 295);
+  --c2: oklch(0.58 0.16 265);
+  --c3: oklch(0.6 0.19 340);
+  --c4: oklch(0.72 0.12 320);
+  --c5: oklch(0.45 0.18 280);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Inter", sans-serif; background: var(--fundo); color: var(--texto); }
+h1, h3, .logo strong { font-family: "Fraunces", serif; }
+
+/* ===== Topo ===== */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: white;
+  border-bottom: 1px solid var(--borda);
+}
+.logo { display: flex; align-items: center; gap: 10px; font-size: 18px; }
+.logo-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--roxo);
+  color: white;
+}
+.topo-texto { font-size: 14px; color: var(--texto-claro); }
+
+/* ===== Hero ===== */
+.hero {
+  padding: 64px 24px 56px;
+  background: linear-gradient(135deg, oklch(0.9 0.06 300), oklch(0.95 0.03 330));
+  border-bottom: 1px solid var(--borda);
+}
+.selo {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  background: #fff6;
+  font-size: 12px;
+}
+.hero h1 { margin: 22px 0; font-size: 50px; line-height: 1.12; letter-spacing: -0.02em; }
+.hero h1 span { color: var(--roxo); }
+.hero p {
+  max-width: 640px;
+  margin-bottom: 32px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--texto-claro);
+}
+
+/* ===== Filtros ===== */
+.filtros { display: flex; flex-wrap: wrap; gap: 10px; }
+.filtro {
+  padding: 9px 16px;
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  background: white;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.filtro:hover { border-color: var(--roxo); }
+.filtro.ativo { background: var(--roxo); border-color: var(--roxo); color: white; }
+.filtro small { margin-left: 4px; opacity: 0.7; }
+
+/* ===== Busca, contador e aviso ===== */
+.ferramentas { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 32px 24px 0; }
+#busca {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px 16px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+}
+#busca:focus { outline: 2px solid var(--roxo); }
+#contador { font-size: 14px; color: var(--texto-claro); }
+.aviso { display: none; padding: 48px 24px; text-align: center; color: var(--texto-claro); }
+
+/* ===== Cards ===== */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 24px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background: white;
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  box-shadow: 0 2px 6px #6d28d91a;
+  color: inherit;
+  text-decoration: none;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px #6d28d933; }
+.capa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 144px;
+  border-radius: 14px;
+  background: linear-gradient(to bottom right, var(--cor1), var(--cor2));
+  font-size: 60px;
+  color: #ffffffcc;
+}
+.plataforma { margin: 12px 10px 0; font-size: 12px; font-weight: 500; color: var(--roxo); }
+.card h3 { margin: 2px 10px 8px; font-size: 18px; line-height: 1.35; }
+
+/* o resumo mostra só 2 linhas e termina com "..." */
+.resumo {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 10px 20px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--texto-claro);
+}
+.etiquetas { display: flex; flex: 1; flex-wrap: wrap; align-content: flex-start; gap: 6px; margin: 0 10px 14px; }
+.etiqueta {
+  padding: 3px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  font-size: 12px;
+}
+.etiqueta.categoria { border-color: transparent; background: color-mix(in oklab, var(--chip) 12%, white); color: var(--chip); }
+.link { margin: 0 10px 8px; font-size: 14px; font-weight: 600; color: var(--roxo); }
+
+/* ===== Cor de cada categoria ===== */
+.economia      { --cor1: var(--c2); --cor2: var(--c5); --chip: var(--c2); }
+.pessoais      { --cor1: var(--c1); --cor2: var(--c3); --chip: var(--c1); }
+.empresariais  { --cor1: var(--c5); --cor2: var(--c4); --chip: var(--c3); }
+.investimentos { --cor1: var(--c1); --cor2: var(--c5); --chip: var(--c4); }
+.orcamento     { --cor1: var(--c4); --cor2: var(--c1); --chip: var(--c5); }
+.dividas       { --cor1: var(--c3); --cor2: var(--c5); --chip: var(--roxo); }
+.empreend      { --cor1: var(--c2); --cor2: var(--c1); --chip: var(--c3); }
+
+/* ===== Celular ===== */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 34px; }
+  .topo-texto { display: none; }
+}
